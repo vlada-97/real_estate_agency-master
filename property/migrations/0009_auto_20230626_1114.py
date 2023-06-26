@@ -14,10 +14,8 @@ def set_owner_pure_phone(apps, schema_editor):
             owner_pure_phone,
             phonenumbers.PhoneNumberFormat.E164,
         )
-        normalized_number = ''.join(filter(str.isdigit,
-                                           flat.owners_phonenumber))
-        if len(normalized_number) == len(formatted_phonenumber[1:]) and \
-            phonenumbers.is_valid_number(owner_pure_phone):
+        normalized_number = ''.join(filter(str.isdigit, flat.owners_phonenumber))
+        if len(normalized_number) == len(formatted_phonenumber[1:]) and phonenumbers.is_valid_number(owner_pure_phone):
             flat.owner_pure_phone = owner_pure_phone
         else:
             flat.owner_pure_phone = ''

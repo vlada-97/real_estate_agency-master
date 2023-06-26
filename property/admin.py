@@ -24,19 +24,19 @@ class FlatAdmin(admin.ModelAdmin):
 
 @admin.register(Complaint)
 class ComplaintAdmin(admin.ModelAdmin):
-    raw_id_fields = ['author_login','flat_complaint']
+    raw_id_fields = ['user','flat']
     list_display = [
-        'author_login',
-        'flat_complaint',
-        'text_complaint',
+        'user',
+        'flat',
+        'text',
     ]
 
 
 @admin.register(Owner)
 class OwnerAdmin(admin.ModelAdmin):
     raw_id_fields = ('flats',)
-    search_fields = ['owner', 'owner_pure_phone']
+    search_fields = ['name', 'owner_pure_phone']
     list_display = [
-        'owner',
+        'name',
         'owner_pure_phone',
     ]
