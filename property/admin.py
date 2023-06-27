@@ -35,8 +35,8 @@ class ComplaintAdmin(admin.ModelAdmin):
 @admin.register(Owner)
 class OwnerAdmin(admin.ModelAdmin):
     raw_id_fields = ('flats',)
-    search_fields = ['name', 'owner_pure_phone']
+    search_fields = ['name', 'pure_phone']
     list_display = [
         'name',
-        'owner_pure_phone',
+        'pure_phone',
     ]

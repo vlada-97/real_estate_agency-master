@@ -59,7 +59,7 @@ class Flat(models.Model):
         User,
         verbose_name='Кто лайкнул:',
         blank=True,
-        related_name="who_liked")
+        related_name="like")
 
     def __str__(self):
         return f'{self.town}, {self.address} ({self.price}р.)'
@@ -86,14 +86,14 @@ class Complaint(models.Model):
         blank=True)
     
     def __str__(self):
-        return self.text_complaint
+        return self.text
 
 
 class Owner(models.Model):
     name = models.CharField('ФИО владельца', max_length=200, db_index=True)
-    owners_phonenumber = models.CharField('Номер владельца', max_length=20, db_index=True)
+    phonenumber = models.CharField('Номер владельца', max_length=20, db_index=True)
     
-    owner_pure_phone = PhoneNumberField(
+    pure_phone = PhoneNumberField(
         'Нормализированный номер владельца',
         region='RU',
         blank=True)
