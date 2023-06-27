@@ -59,7 +59,7 @@ class Flat(models.Model):
         User,
         verbose_name='Кто лайкнул:',
         blank=True,
-        related_name="like")
+        related_name="likes")
 
     def __str__(self):
         return f'{self.town}, {self.address} ({self.price}р.)'
